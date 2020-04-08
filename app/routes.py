@@ -1,0 +1,40 @@
+from app import app
+from flask import render_template
+
+requestCount = 0
+
+@app.route('/')
+@app.route('/index')
+def index():
+    global requestCount
+    requestCount = requestCount + 1
+    print (requestCount)
+    return render_template('index.html',
+                           user={
+                               "username": "Junaid"
+                           },
+                           posts=[
+                               {
+                                   "title": "Wonderful Weekend in Prague",
+                                   "body": "Ut gravida turpis non nisl accumsan, at condimentum magna vestibulum. Donec accumsan feugiat metus, a molestie lorem egestas posuere. Nulla nisi libero, fringilla congue orci vel, viverra tempus justo. Nam semper massa dui, vel iaculis ipsum egestas et. Aliquam odio quam, pharetra vel dapibus ac, pulvinar at lacus. Cras eu dapibus turpis. Maecenas fermentum metus turpis, quis euismod velit maximus sed. Donec tincidunt, velit at tincidunt ultrices, urna est malesuada mi, a blandit ipsum tellus et arcu. Fusce sit amet purus blandit, mattis diam et, vehicula odio. Cras risus ante, tincidunt eu dui sit amet, vestibulum interdum nisi. Donec orci ipsum, tincidunt eget massa non, porttitor dapibus elit. Fusce accumsan aliquet diam, sed eleifend leo finibus ut. Suspendisse pretium sem et lorem tempus, malesuada bibendum sapien rutrum. \n\r Duis sed nisi sapien. Curabitur a viverra ante, eu molestie tortor. Nunc ex nisi, dapibus ut convallis in, venenatis at augue. Nam ipsum sem, hendrerit eu risus et, malesuada ultrices nisl. Ut in sapien ac ex luctus vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ullamcorper mauris ut tempor ultrices. Fusce consectetur lobortis velit sit amet venenatis. Nam blandit ipsum ac viverra porttitor. Sed interdum augue porttitor dolor sagittis iaculis. Sed scelerisque leo justo, eu pulvinar arcu varius sed. \n\r Ut tincidunt turpis dui. Praesent id tellus vel erat gravida gravida a et ligula. Nullam eget condimentum nunc, vitae molestie ipsum. Mauris tincidunt velit vel maximus aliquam. Donec pulvinar elementum libero, quis molestie odio egestas eu. Suspendisse scelerisque leo massa, et imperdiet arcu rhoncus ac. Vivamus ac mi non elit dignissim tincidunt. Sed posuere turpis id nisi lacinia, sed rhoncus ante molestie. Praesent sed elit malesuada, maximus justo non, condimentum nibh. Fusce et sapien vel felis tincidunt finibus. Vestibulum ullamcorper malesuada magna, sollicitudin feugiat ex ullamcorper id. Nunc ac augue et leo laoreet viverra id sed metus. Nam quis neque vitae orci congue dignissim",
+                                   "author": "Junaid Hossein"
+                               },
+                               {
+                                   "title": "Wonderful Weekend in Prague",
+                                   "body": "Ut gravida turpis non nisl accumsan, at condimentum magna vestibulum. Donec accumsan feugiat metus, a molestie lorem egestas posuere. Nulla nisi libero, fringilla congue orci vel, viverra tempus justo. Nam semper massa dui, vel iaculis ipsum egestas et. Aliquam odio quam, pharetra vel dapibus ac, pulvinar at lacus. Cras eu dapibus turpis. Maecenas fermentum metus turpis, quis euismod velit maximus sed. Donec tincidunt, velit at tincidunt ultrices, urna est malesuada mi, a blandit ipsum tellus et arcu. Fusce sit amet purus blandit, mattis diam et, vehicula odio. Cras risus ante, tincidunt eu dui sit amet, vestibulum interdum nisi. Donec orci ipsum, tincidunt eget massa non, porttitor dapibus elit. Fusce accumsan aliquet diam, sed eleifend leo finibus ut. Suspendisse pretium sem et lorem tempus, malesuada bibendum sapien rutrum. \n\r Duis sed nisi sapien. Curabitur a viverra ante, eu molestie tortor. Nunc ex nisi, dapibus ut convallis in, venenatis at augue. Nam ipsum sem, hendrerit eu risus et, malesuada ultrices nisl. Ut in sapien ac ex luctus vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ullamcorper mauris ut tempor ultrices. Fusce consectetur lobortis velit sit amet venenatis. Nam blandit ipsum ac viverra porttitor. Sed interdum augue porttitor dolor sagittis iaculis. Sed scelerisque leo justo, eu pulvinar arcu varius sed. \n\r Ut tincidunt turpis dui. Praesent id tellus vel erat gravida gravida a et ligula. Nullam eget condimentum nunc, vitae molestie ipsum. Mauris tincidunt velit vel maximus aliquam. Donec pulvinar elementum libero, quis molestie odio egestas eu. Suspendisse scelerisque leo massa, et imperdiet arcu rhoncus ac. Vivamus ac mi non elit dignissim tincidunt. Sed posuere turpis id nisi lacinia, sed rhoncus ante molestie. Praesent sed elit malesuada, maximus justo non, condimentum nibh. Fusce et sapien vel felis tincidunt finibus. Vestibulum ullamcorper malesuada magna, sollicitudin feugiat ex ullamcorper id. Nunc ac augue et leo laoreet viverra id sed metus. Nam quis neque vitae orci congue dignissim",
+                                   "author": "Junaid Hossein"
+                               },            {
+                                   "title": "Wonderful Weekend in Prague",
+                                   "body": "lorem ipsum dolor ipset",
+                                   "author": "Junaid Hossein"
+                               },            {
+                                   "title": "Wonderful Weekend in Prague",
+                                   "body": "lorem ipsum dolor ipset",
+                                   "author": "Junaid Hossein"
+                               },
+                               {"title": "Wonderful Weekend in Prague",
+                                "body": "Ut gravida turpis non nisl accumsan, at condimentum magna vestibulum. Donec accumsan feugiat metus, a molestie lorem egestas posuere. Nulla nisi libero, fringilla congue orci vel, viverra tempus justo. Nam semper massa dui, vel iaculis ipsum egestas et. Aliquam odio quam, pharetra vel dapibus ac, pulvinar at lacus. Cras eu dapibus turpis. Maecenas fermentum metus turpis, quis euismod velit maximus sed. Donec tincidunt, velit at tincidunt ultrices, urna est malesuada mi, a blandit ipsum tellus et arcu. Fusce sit amet purus blandit, mattis diam et, vehicula odio. Cras risus ante, tincidunt eu dui sit amet, vestibulum interdum nisi. Donec orci ipsum, tincidunt eget massa non, porttitor dapibus elit. Fusce accumsan aliquet diam, sed eleifend leo finibus ut. Suspendisse pretium sem et lorem tempus, malesuada bibendum sapien rutrum. \n\r Duis sed nisi sapien. Curabitur a viverra ante, eu molestie tortor. Nunc ex nisi, dapibus ut convallis in, venenatis at augue. Nam ipsum sem, hendrerit eu risus et, malesuada ultrices nisl. Ut in sapien ac ex luctus vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ullamcorper mauris ut tempor ultrices. Fusce consectetur lobortis velit sit amet venenatis. Nam blandit ipsum ac viverra porttitor. Sed interdum augue porttitor dolor sagittis iaculis. Sed scelerisque leo justo, eu pulvinar arcu varius sed. \n\r Ut tincidunt turpis dui. Praesent id tellus vel erat gravida gravida a et ligula. Nullam eget condimentum nunc, vitae molestie ipsum. Mauris tincidunt velit vel maximus aliquam. Donec pulvinar elementum libero, quis molestie odio egestas eu. Suspendisse scelerisque leo massa, et imperdiet arcu rhoncus ac. Vivamus ac mi non elit dignissim tincidunt. Sed posuere turpis id nisi lacinia, sed rhoncus ante molestie. Praesent sed elit malesuada, maximus justo non, condimentum nibh. Fusce et sapien vel felis tincidunt finibus. Vestibulum ullamcorper malesuada magna, sollicitudin feugiat ex ullamcorper id. Nunc ac augue et leo laoreet viverra id sed metus. Nam quis neque vitae orci congue dignissim",
+                                "author": "Junaid Hossein"
+                                }
+                           ]
+                           )

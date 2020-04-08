@@ -1,1 +1,1 @@
-simple-flask-site2
+simple-flask-site
